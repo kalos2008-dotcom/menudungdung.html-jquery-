@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>4.2.2.2 - Menu đứng jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    body {
+      font-family: "Times New Roman", Times, serif;
+      padding: 20px;
+    }
+
+    #vertical-menu {
+      width: 180px;
+      background-color: #9e9e9e;
+      padding: 4px;
+      border: 1px solid #666;
+    }
+    .menu-header {
+      background-color: #cccccc;
+      color: #222;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 6px 8px;
+      border: 1px solid #777;
+      margin-top: 3px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .menu-header:first-child {
+      margin-top: 0;
+    }
+
+    .menu-header:hover {
+      background-color: #dcdcdc;
+    }
+    .menu-sub {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu-sub li a {
+      display: block;
+      background-color: #3d3d3d;
+      color: #e0e0e0;
+      text-decoration: none;
+      font-size: 15px;
+      padding: 6px 8px;
+      border-bottom: 1px solid #555;
+      border-left: 1px solid #222;
+      border-right: 1px solid #222;
+    }
+
+    .menu-sub li:last-child a {
+      border-bottom: none;
+    }
+
+    .menu-sub li a:hover {
+      background-color: #555555;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="vertical-menu">
+    <div class="menu-header">Đời sống</div>
+    <ul class="menu-sub">
+      <li><a href="#">Hoa hậu</a></li>
+      <li><a href="#">Nghệ sĩ</a></li>
+      <li><a href="#">Mỹ thuật</a></li>
+    </ul>
+
+    <div class="menu-header">Giải trí</div>
+    <ul class="menu-sub">
+      <li><a href="#">Âm nhạc</a></li>
+      <li><a href="#">Thời trang</a></li>
+      <li><a href="#">Điện ảnh</a></li>
+    </ul>
+    <div class="menu-header">Thể thao</div>
+    <ul class="menu-sub">
+      <li><a href="#">Bóng đá</a></li>
+      <li><a href="#">Tennis</a></li>
+      <li><a href="#">Các món khác</a></li>
+    </ul>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $(".menu-header").click(function () {
+        $(this).next(".menu-sub").slideToggle(250);
+      });
+    });
+  </script>
+
+</body>
+</html>
